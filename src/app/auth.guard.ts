@@ -15,15 +15,15 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean{
-    if(this.userService.isLoggedIn()){
+      if(localStorage.getItem('username')!= null){
         return true;
-    }
-    else{
-      alert("you are not a authenticate user:plz visit on login page");
-      this.router.navigate(['login']);
-
-    }
-    //return true;
+      }
+      else{
+        alert("you are not a valid user");
+        this.router.navigate(['login']);
+        return false;
+      }
+   
   }
   
 }

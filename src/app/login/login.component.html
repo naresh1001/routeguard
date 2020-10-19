@@ -1,2 +1,10 @@
 <p>login works!</p>
 <h2>Login Page</h2>
+
+<form action="" #myform="ngForm" (ngSubmit)="loginHere(myform.value)">
+    <input type="text" name="name" id=""  [(ngModel)]="user.name"><br>
+    <input type="password" name="pwd" id=""  [(ngModel)]="user.pwd"> <br><br>
+    <input type="submit" value="Submit">
+</form>
+<span>{{msg}}</span>
+
